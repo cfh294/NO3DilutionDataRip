@@ -22,7 +22,7 @@ The output list has a HUC11 join field that can easily be joined to a watershed 
 going to write this into my script, but I realized that this tool could be used outside of arcpy and GIS, as well. 
 
 
-Disclaimer: I did not create the original DEP model! It can be downloaded from this repo, or by clicking: 
+Disclaimer: I did not create the original DEP model! It can be downloaded from this repo, or by going to: 
 
                          http://www.nj.gov/dep/wqmp/docs/huc11_no3_cc_planning_tool_v3.0.xls
 

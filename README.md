@@ -24,7 +24,6 @@ going to write this into my script, but I realized that this tool could be used 
 
 
 ###Disclaimer: 
-I did not create the original DEP model! It can be downloaded from this repo, or by going to: 
+I did not create the original DEP model! It can be downloaded from this repo, or by clicking [this link](http://www.nj.gov/dep/wqmp/docs/huc11_no3_cc_planning_tool_v3.0.xls)
 
-                         http://www.nj.gov/dep/wqmp/docs/huc11_no3_cc_planning_tool_v3.0.xls
 

@@ -1,18 +1,24 @@
 #!/usr/bin/env python
 # Code: Connor Hornibrook, 04 August 2015
 #
-# Rips all NO3 dilution data by watershed from the DEP Excel model, and outputs an excel sheet
-# with the new data. Created because the current model only allows for the selection of individual
-# municipalities. This script does it for the whole state. The file for the DEP model is located
-# within this git repository as "DEP_Nitrate_Model". The result of this module can be easily joined
-# watershed GIS data on the HUC11 field. The DEP model, and therefore this tool, does not calculate
-# values for either Hudson or Essex County. This tool is used on the command
-# line. 
+# Outputs a table of septic density values for every HUC11 watershed in
+# the State of New Jersey. Created due to the limitations of the original
+# NJDEP-created model, which allowed users to calculate density values by
+# watershed on a municipality-wide basis, one at a time. While this can be
+# useful in some ways, it would take hours to do calculations at different
+# values for the entire state. This script does just that, usually in a matter
+# of seconds.
+#
+# An understanding of the command line or git bash is needed in order to
+# run this model, as it takes system arguments. 
 
 import sys, os
 from xlrd import *
 from xlwt import *
 
+# Dictionary containing average recharge values for all HUC11 watersheds
+# in New Jersey. Data was taken from the publicly available DEP model which
+# can be downloaded at http://www.nj.gov/dep/wqmp/docs/huc11_no3_cc_planning_tool_v3.0.xls
 AVG_RECHARGE = {'02020007000' : (13.0, 'Rutgers Creek tribs'),
                 '02020007010' : (13.9, 'Wallkill River (above road to Martins)'),
                 '02020007020' : (13.7, 'Papakating Creek'),
@@ -173,7 +179,7 @@ WS_INDEX = 1
                                         # of our project's calculations. 3.14
                                         # was our standard population density
                                         # but the DEP's model default was 3.0
-        #DEP model                              #std.: 2.0    #std.: 10.0
+        #save directory                 #std.: 2.0    #std.: 10.0
 def main(outputDirectory, inPopDens, inTargetNO3, inLoadingRate):
 
     popDensity = float(inPopDens)

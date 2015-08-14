@@ -13,7 +13,6 @@
 # run this model, as it takes system arguments. 
 
 import sys, os
-from xlrd import *
 from xlwt import *
 
 # Dictionary containing average recharge values for all HUC11 watersheds
@@ -220,6 +219,7 @@ def main(outputDirectory, inPopDens, inTargetNO3, inLoadingRate):
 
     wb.save(outputFile)
     os.startfile(outputFile)
+    return xl_rows
 
 # main method
 if __name__ == '__main__':
